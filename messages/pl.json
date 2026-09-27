@@ -1,0 +1,11 @@
+{
+  "Metadata": {
+    "title": "Kreator dodawania produktu",
+    "description": "Kreator dodawania produktu"
+  },
+  "ProductsPage": {
+    "title": "Produkty",
+    "count": "{count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}} w katalogu",
+    "addProduct": "Dodaj produkt"
+  }
+}
