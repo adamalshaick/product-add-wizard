@@ -35,6 +35,7 @@
     "title": "Dodaj nowy produkt",
     "stepOf": "Krok {current} z {total}",
     "stepsLabel": "Kroki kreatora",
+    "productAdded": "Produkt został dodany",
     "steps": {
       "information": {
         "title": "Informacje",
