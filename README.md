@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Add Wizard
 
-## Getting Started
+A small product catalog with a three-step wizard for adding new products. Built with Next.js and React.
 
-First, run the development server:
+The UI is in Polish. There is no backend – products live in your browser's local storage, so everything you add stays on your machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What it does
+
+- Shows a list of products (a table on desktop, cards on mobile) with pagination.
+- Lets you add a product through a wizard with three steps:
+  1. **Information** – name, SKU, description, manufacturer, category, features.
+  2. **Price** – net price, gross price, VAT rate and currency. Net and gross are kept in sync automatically.
+  3. **Availability** – whether the product is available, stock limit, and min/max quantity per cart.
+- Validates every step and jumps back to the first step with errors when you try to submit.
+- Comes with a few sample products so the list is not empty on first run.
+
+## Tech stack
+
+- [Next.js](https://nextjs.org) 16 (App Router) + React 19
+- TypeScript
+- Tailwind CSS 4 + [shadcn/ui](https://ui.shadcn.com) components (Base UI under the hood)
+- [TanStack Form](https://tanstack.com/form) + [Zod](https://zod.dev) for the wizard and validation
+- [Zustand](https://zustand.docs.pmnd.rs) for state (persisted to local storage)
+- [next-intl](https://next-intl.dev) for translations
+- [nuqs](https://nuqs.dev) for keeping the current page in the URL
+
+## Requirements
+
+- Node.js **20.9 or newer**
+- npm (comes with Node)
+
+## Getting started
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/adamalshaick/product-add-wizard.git
+   cd product-add-wizard
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000). You will be redirected to `/products`.
+
+No environment variables or extra setup are needed.
+
+## Scripts
+
+| Command         | What it does                                  |
+| --------------- | --------------------------------------------- |
+| `npm run dev`   | Starts the dev server with hot reload         |
+| `npm run build` | Builds the app for production                 |
+| `npm run start` | Serves the production build (run `build` first) |
+| `npm run lint`  | Runs ESLint                                   |
+
+## Project structure
+
+```
+messages/
+  pl.json                 # all UI texts (Polish)
+src/
+  app/
+    layout.tsx            # root layout: fonts, i18n provider, toaster
+    (app)/products/       # the products page
+  components/
+    ui/                   # shadcn/ui components
+    layout/               # page container
+    products/
+      add-product-dialog/ # the wizard: steps, form schema, validation
+      products-list/      # table, cards, pagination
+  i18n/request.ts         # next-intl config (locale is hardcoded to "pl")
+  stores/products-store.ts # Zustand store + sample products
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Good to know
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Data is stored in local storage** under the key `products`. To reset the catalog back to the sample products, clear that key in your browser's dev tools (Application → Local Storage) and refresh.
+- **Texts and translations** live in `messages/pl.json`. To change any label, edit that file.
+- **Page size** for the list is set in `src/components/products/products-list/constants.ts`.
+- **Adding a new UI component** from shadcn/ui:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  ```bash
+  npx shadcn@latest add <component-name>
+  ```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `AGENTS.md` and `CLAUDE.md` are generated by `next dev` for AI coding tools. You can ignore them.

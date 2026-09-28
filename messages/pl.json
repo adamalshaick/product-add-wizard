@@ -1,0 +1,129 @@
+{
+  "Metadata": {
+    "title": "Kreator dodawania produktu",
+    "description": "Kreator dodawania produktu"
+  },
+  "ProductsPage": {
+    "title": "Produkty",
+    "count": "{count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}} w katalogu",
+    "addProduct": "Dodaj produkt",
+    "list": {
+      "listLabel": "Lista produktów",
+      "empty": "Brak produktów w katalogu",
+      "columns": {
+        "name": "Nazwa",
+        "sku": "SKU",
+        "category": "Kategoria",
+        "grossPrice": "Cena brutto",
+        "status": "Status",
+        "stock": "Magazyn"
+      },
+      "status": {
+        "available": "Dostępny",
+        "unavailable": "Niedostępny"
+      }
+    },
+    "pagination": {
+      "label": "Paginacja",
+      "summary": "Strona {page} z {pageCount} · {count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}}",
+      "previous": "Wstecz",
+      "next": "Dalej",
+      "goToPage": "Przejdź do strony {page}"
+    }
+  },
+  "AddProductDialog": {
+    "title": "Dodaj nowy produkt",
+    "stepOf": "Krok {current} z {total}",
+    "stepsLabel": "Kroki kreatora",
+    "productAdded": "Produkt został dodany",
+    "steps": {
+      "information": {
+        "title": "Informacje",
+        "description": "Dane podstawowe"
+      },
+      "price": {
+        "title": "Cena",
+        "description": "Dane cenowe"
+      },
+      "availability": {
+        "title": "Dostępność",
+        "description": "Stany magazynowe"
+      }
+    },
+    "actions": {
+      "close": "Zamknij",
+      "back": "Wstecz",
+      "next": "Dalej",
+      "submit": "Zapisz produkt"
+    },
+    "information": {
+      "name": "Nazwa produktu",
+      "namePlaceholder": "np. MacBook Pro 14",
+      "sku": "SKU produktu",
+      "skuPlaceholder": "np. MBP14M3PRO",
+      "description": "Opis",
+      "descriptionPlaceholder": "Krótki opis produktu",
+      "manufacturer": "Producent",
+      "manufacturerPlaceholder": "Wybierz producenta",
+      "category": "Kategoria",
+      "categoryPlaceholder": "Wybierz kategorię",
+      "features": "Cechy produktu"
+    },
+    "price": {
+      "netPrice": "Cena netto",
+      "grossPrice": "Cena brutto",
+      "vatRate": "Stawka VAT",
+      "currency": "Waluta",
+      "amountPlaceholder": "0.00"
+    },
+    "availability": {
+      "isAvailable": "Produkt jest dostępny",
+      "isLimited": "Produkt limitowany",
+      "stockQuantity": "Ilość na magazynie",
+      "quantityPlaceholder": "0",
+      "cartLimits": "Limity koszyka",
+      "minCartQuantity": "Minimalna ilość",
+      "maxCartQuantity": "Maksymalna ilość"
+    },
+    "validation": {
+      "nameRequired": "Nazwa produktu jest wymagana",
+      "nameMin": "Nazwa musi mieć co najmniej 3 znaki",
+      "skuRequired": "SKU jest wymagane",
+      "skuAlphanumeric": "SKU może zawierać tylko litery i cyfry",
+      "skuMax": "SKU może mieć maksymalnie 24 znaki",
+      "manufacturerRequired": "Wybierz producenta z listy",
+      "categoryRequired": "Wybierz kategorię z listy",
+      "featuresMin": "Wybierz co najmniej jedną cechę",
+      "netPriceRequired": "Cena netto jest wymagana",
+      "netPriceInvalid": "Podaj poprawną kwotę",
+      "grossPriceRequired": "Cena brutto jest wymagana",
+      "grossPriceInvalid": "Podaj poprawną kwotę",
+      "vatRateRequired": "Wybierz stawkę VAT",
+      "currencyRequired": "Wybierz walutę",
+      "stockQuantityRequired": "Podaj ilość na magazynie",
+      "quantityInteger": "Podaj nieujemną liczbę całkowitą",
+      "minCartQuantityRequired": "Podaj minimalną ilość",
+      "maxCartQuantityRequired": "Podaj maksymalną ilość",
+      "minCartQuantityTooHigh": "Minimalna ilość nie może być większa niż maksymalna",
+      "maxCartQuantityTooLow": "Maksymalna ilość nie może być mniejsza niż minimalna"
+    }
+  },
+  "ProductOptions": {
+    "category": {
+      "computers": "Komputery",
+      "phones": "Telefony",
+      "rtv": "RTV",
+      "agd": "AGD",
+      "accessories": "Akcesoria"
+    },
+    "feature": {
+      "bluetooth": "Bluetooth",
+      "wifi": "WiFi",
+      "usb-c": "USB-C",
+      "waterproof": "Wodoodporny",
+      "wireless": "Bezprzewodowy",
+      "eco": "Ekologiczny",
+      "premium": "Premium"
+    }
+  }
+}
