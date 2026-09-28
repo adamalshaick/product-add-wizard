@@ -123,7 +123,6 @@ export const defaultProducts: Product[] = [
 type ProductsState = {
   products: Product[];
   addProduct: (product: Product) => void;
-  removeProduct: (id: string) => void;
 };
 
 type PersistedProductsState = Pick<ProductsState, "products">;
@@ -144,10 +143,6 @@ export const productsStore = createStore<ProductsState>()(
       products: defaultProducts,
       addProduct: (product) =>
         set((state) => ({ products: [product, ...state.products] })),
-      removeProduct: (id) =>
-        set((state) => ({
-          products: state.products.filter((product) => product.id !== id),
-        })),
     }),
     {
       name: "products",
