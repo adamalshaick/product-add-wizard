@@ -35,21 +35,23 @@ export function ProductsList() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 md:hidden">
+      <div className="flex flex-col gap-6 md:hidden">
         <ul aria-label={t("list.listLabel")} className="flex flex-col gap-2">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </ul>
-        <p className="text-center text-sm/normal text-muted-foreground">
-          {summary}
-        </p>
-        <ProductsPagination
-          page={page}
-          pageCount={pageCount}
-          onPageChange={setPage}
-          className="justify-center"
-        />
+        <div className="flex flex-col gap-4">
+          <p className="text-center text-sm/normal text-muted-foreground">
+            {summary}
+          </p>
+          <ProductsPagination
+            page={page}
+            pageCount={pageCount}
+            onPageChange={setPage}
+            className="justify-center"
+          />
+        </div>
       </div>
     </>
   );

@@ -29,7 +29,6 @@ export const featureValues = [
   "eco",
   "premium",
 ] as const;
-export type FeatureValue = (typeof featureValues)[number];
 
 export const vatRateOptions: SelectOption[] = [
   { value: "23", label: "23%" },
