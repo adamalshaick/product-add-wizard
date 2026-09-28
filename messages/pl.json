@@ -6,7 +6,30 @@
   "ProductsPage": {
     "title": "Produkty",
     "count": "{count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}} w katalogu",
-    "addProduct": "Dodaj produkt"
+    "addProduct": "Dodaj produkt",
+    "list": {
+      "listLabel": "Lista produktów",
+      "empty": "Brak produktów w katalogu",
+      "columns": {
+        "name": "Nazwa",
+        "sku": "SKU",
+        "category": "Kategoria",
+        "grossPrice": "Cena brutto",
+        "status": "Status",
+        "stock": "Magazyn"
+      },
+      "status": {
+        "available": "Dostępny",
+        "unavailable": "Niedostępny"
+      }
+    },
+    "pagination": {
+      "label": "Paginacja",
+      "summary": "Strona {page} z {pageCount} · {count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}}",
+      "previous": "Wstecz",
+      "next": "Dalej",
+      "goToPage": "Przejdź do strony {page}"
+    }
   },
   "AddProductDialog": {
     "title": "Dodaj nowy produkt",

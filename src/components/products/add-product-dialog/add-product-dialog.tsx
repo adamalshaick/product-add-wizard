@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import { usePageParam } from "@/components/products/products-list/use-products-page";
 import { useProductsStore } from "@/stores/products-store";
 
 import {
@@ -43,6 +44,7 @@ export function AddProductDialog({ children }: AddProductDialogProps) {
   /** Highest step reached so far – steps up to it can be revisited freely. */
   const [reachedStep, setReachedStep] = useState(0);
   const addProduct = useProductsStore((state) => state.addProduct);
+  const [, setPage] = usePageParam();
 
   const stepSchemas = useMemo(() => createStepSchemas(t), [t]);
 
@@ -54,6 +56,8 @@ export function AddProductDialog({ children }: AddProductDialogProps) {
       const targetStep = meta.targetStep ?? step + 1;
       if (targetStep > LAST_STEP) {
         addProduct(createProductFromForm(value));
+        // The new product is prepended, so it lives on the first page.
+        void setPage(null);
         handleOpenChange(false);
         return;
       }

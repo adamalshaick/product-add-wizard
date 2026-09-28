@@ -14,7 +14,8 @@ export const productSchema = z.object({
   netPrice: z.number(),
   grossPrice: z.number(),
   vatRate: z.number(),
-  currency: z.string(),
+  /** Three letters – `Intl.NumberFormat` throws on any other currency code. */
+  currency: z.string().regex(/^[A-Za-z]{3}$/),
   isAvailable: z.boolean(),
   /** `null` when the product is not limited (unlimited stock). */
   stockQuantity: z.number().nullable(),
